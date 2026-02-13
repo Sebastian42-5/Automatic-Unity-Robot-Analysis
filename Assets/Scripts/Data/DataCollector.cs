@@ -271,7 +271,7 @@ public class DataCollector : MonoBehaviour
                         float l1 = Vector3.Distance(shoulderControl.position, elbowControl.position);
                         float l2 = Vector3.Distance(elbowControl.position, magnetPos);
 
-                        float q2 = -Mathf.Acos((magnetPos.x**2 + magnetPos.y**2 - l1**2 - l2**2) / 2 * l1 * l2);
+                        float q2 = -Mathf.Acos((magnetPos.x**2 + magnetPos.y**2 - l1**2 - l2**2) / (2 * l1 * l2));
                         float q1 = Mathf.Atan(magnetPos.y / magnetPos.x) + Mathf.Atan((l2 * mathf.sin(q2)) / (l1 + l2*Mathf.cos(q2)))
 
 

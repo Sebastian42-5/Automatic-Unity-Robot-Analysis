@@ -84,6 +84,7 @@ public class RobotAgent : Agent
     private Vector2 currentJointAngles;  // [shoulder, elbow]
     private Vector3 previousMagnetPosition;
     private Vector3 magnetVelocity;
+    
 
     public override void Initialize()
     {
@@ -95,6 +96,8 @@ public class RobotAgent : Agent
 
         boxStartPosition = targetZoneA.position + Vector3.up * 0.5f;
         targetPosition = targetZoneB.position + Vector3.up * 0.5f;
+        l1 = Vector3.distance(elbow.position, magnet.position);
+        l2 = Vector3.distance(shoulder.position, elbow.position);
         successfulMoves = 0;
         totalAttempts = 0;
         SetupMagnetCollider();
